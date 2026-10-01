@@ -222,3 +222,82 @@ Exact limits/prices must be set from real usage data, not guessed in code.
 - Never silently switch away from a manually pinned model.
 - Always preserve provider/model/cost lineage for Lab evidence.
 - Users must be able to disconnect/revoke a provider connection.
+
+
+## Prompt Builder is the primary AI-selection surface
+
+The provider/model choice belongs directly in the Prompt Builder.
+
+The normal user flow is:
+
+Task/Prompt
+-> choose provider/model OR choose Smart Match
+-> Brain Studio analyzes the actual prompt
+-> estimate prompt/input size
+-> estimate a reasonable output range
+-> check connected/available AI supply
+-> calculate a cost range from current known model pricing
+-> show the planned model/source/cost before execution or copy
+
+### Manual provider/model mode
+
+Example:
+
+AI
+[ Claude Sonnet v ]
+
+Prompt input estimate: ~6,800 tokens
+Expected output: 2,000-4,000 tokens
+Estimated API cost: $0.03-$0.05
+Payment source: Your Anthropic account
+
+The user may change provider/model and immediately see the estimate recalculate.
+
+### Smart Match mode
+
+Example:
+
+AI
+[ Smart Match ]
+
+Primary:
+Qwen Coder
+Reason: coding/debugging task + strongest current Lab evidence + available quota
+Estimated cost: uses connected/free allowance
+
+Fallback:
+Claude Sonnet
+Only if primary fails
+Estimated additional cost: $0.03-$0.05
+
+The Smart Match result is based on the actual prompt/task, selected Brain, selected Skills, available connected providers/models, Lab evidence, quota, preferences, and budget.
+
+### Copy/paste mode still gets cost guidance
+
+Brain Studio remains useful even when it does not execute the request.
+
+If the user selects Copy Prompt, show:
+
+Recommended AI: Qwen Coder
+Estimated prompt size: ~6,800 tokens
+Estimated output range: 2,000-4,000 tokens
+Estimated API cost if run through a connected/direct provider: $0.004-$0.01
+
+[ Copy Prompt ]
+
+This lets users decide where to paste the prompt while still understanding likely model fit and cost.
+
+### Estimation honesty
+
+Cost preview is an estimate until a provider returns actual usage.
+
+The UI must distinguish:
+- ESTIMATED_FROM_PROMPT
+- PROVIDER_REPORTED_ACTUAL
+- CONNECTED_ACCOUNT_USAGE
+- FREE_PROVEN
+- UNKNOWN
+
+Prompt-token estimation and expected output ranges must never be presented as exact actual usage.
+
+Provider/model prices used for estimates must come from a maintained pricing registry with an effective date/version so stale prices can be detected rather than silently treated as current.
