@@ -14,6 +14,21 @@ The first version is copy/paste-first. It does **not** require users to move the
 
 Project Q&A -> Brain -> Skills -> Prompt -> Copy/Paste -> Add Result -> Worked/Partly/Failed -> Lessons -> Lab -> Better next run
 
+## Keep Studio focused
+
+Brain Studio itself stays intentionally light and task-focused.
+
+Core Studio surfaces:
+- **Brains**
+- **Skills**
+- **Prompt Builder**
+- **Results / Lessons**
+- **Lab**
+- **Smart Match**
+- **Leaderboards**
+
+The broader social/community/news/learning experience belongs in the KleinHub NewsStand layer, not inside the main Studio workflow.
+
 ## First-version surfaces
 
 - **Brains** — project context, goals, audience, rules, preferences, tools/context, decisions, lessons.
@@ -21,6 +36,7 @@ Project Q&A -> Brain -> Skills -> Prompt -> Copy/Paste -> Add Result -> Worked/P
 - **Prompt Builder** — combines Brain + chosen Skills + current task into a portable prompt with one-click copy.
 - **Results** — paste an AI result back in, mark Worked / Partly / Failed, record changes and lessons.
 - **Lab (member)** — tests prompts/skills/models, records evidence, and feeds findings back into the Brain. Lab may recommend; it does not silently rewrite confirmed user truth.
+- **Leaderboards** — evidence-weighted weekly rankings for Skills, Prompts, creators, categories, and challenges.
 
 ## Reuse from KleinHub
 
@@ -52,13 +68,13 @@ A non-technical user should be able to create a Brain, add a prebuilt Skill, gen
 
 This repository is the first real product build used to evaluate the KleinHub Pi worker system.
 
-
 ## Community + Leaderboards
 
-Brain Studio is not only a private Brain. Users can optionally publish Skills and Prompts to the community.
+Brain Studio users may optionally publish Skills and Prompts to the broader KleinHub community.
+
+The **leaderboards stay inside Brain Studio** because they directly help users choose what to add or use.
 
 Community items should show evidence, not just likes:
-
 - uses
 - Worked / Partly / Failed outcomes
 - unique-user count
@@ -70,7 +86,6 @@ Community items should show evidence, not just likes:
 Leaderboards are evidence-weighted and sample-size-aware. A prompt with 5/5 successes must not automatically outrank one with 7,200/8,000 successful uses.
 
 Initial weekly boards:
-
 - Best Prompt This Week
 - Best Skill This Week
 - Fastest Rising
