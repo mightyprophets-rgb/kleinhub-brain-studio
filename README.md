@@ -1,5 +1,11 @@
 # KleinHub Brain Studio
 
+> **Coming soon from KleinHub**
+>
+> Brain Studio is being built in public as a simple way to teach AI your project, give it reusable skills, learn from what works, and carry that intelligence to whatever AI you already use.
+>
+> Follow the repo to watch the first worker-built version come together.
+
 **Teach your AI once. Give it skills. Learn from every result. Use it anywhere.**
 
 Brain Studio is a portable AI setup builder for normal people. A user creates a Project Brain through a simple Q&A, adds prebuilt or custom Skills, builds copy/paste prompts for whatever AI they already use, and records what worked or failed. The Lab learns from that evidence and improves future prompts, skills, and model recommendations.
