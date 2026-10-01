@@ -2,7 +2,42 @@
 
 Brain Studio should not invent a second social/news/community shell from scratch.
 
-The existing private repository `mightyprophets-rgb/kleinhub-ai-newsstand` already contains mature patterns that can be adapted into Brain Studio.
+The existing private repository `mightyprophets-rgb/kleinhub-ai-newsstand` already contains mature patterns that can be adapted into the broader Brain Studio ecosystem.
+
+## Product boundary
+
+### Brain Studio stays focused
+
+Brain Studio owns the direct work surfaces:
+- Brains
+- Skills
+- Prompt Builder
+- Results / Lessons
+- Lab
+- Smart Match
+- **Leaderboards**
+
+The leaderboard stays in Studio because it directly helps a user choose which Skill, Prompt, creator, or approach to use next.
+
+Studio should not become a giant social/news app.
+
+### NewsStand becomes the broader ecosystem layer
+
+Use the NewsStand pattern for:
+- AI news and model/provider updates
+- Brain Studio product updates
+- community discussion
+- creator/community posts
+- lessons and University
+- guides
+- weekly challenges
+- creator spotlights
+- community highlights
+- saved reading/library
+- notifications
+- moderation/reporting
+
+This keeps Studio light while still giving Brain Studio users a rich place to learn, discover, discuss, and follow what is happening.
 
 ## Existing NewsStand capabilities worth reusing
 
@@ -41,92 +76,90 @@ Relevant existing areas:
 - `src/components/university/*`
 - `src/lib/university/lesson-sources.ts`
 
-Brain Studio can use this for:
-- how-to-use-AI lessons
+Use it for:
+- how to use AI
 - how to build a strong Brain
 - how to make Skills
 - prompting lessons
 - Lab/Smart Match education
 - model/provider explainers
-- community creator lessons
+- creator lessons
+- privacy/safety education
 
 ### AI / product updates
-Adapt the NewsStand article/feed model into a Brain Studio Updates section:
+Adapt the NewsStand article/feed model for:
 - new model releases
 - provider changes
 - new Brain Studio features
-- new community Skills/Prompts
-- Lab findings
+- important Lab findings
 - Smart Match changes
 - weekly leaderboard winners
-- weekly challenges
+- weekly challenge announcements/results
 - creator spotlights
 - AI safety/privacy updates
 
-Users should be able to save updates, discuss them, and move from an update directly into a related lesson, Skill, Prompt, or Lab test.
+Users should be able to save updates, discuss them, and move from an update directly into a related lesson, Skill, Prompt, Lab test, or Studio leaderboard entry.
 
-## Brain Studio Community shape
+## Navigation relationship
 
-The user-facing surface can be one area with tabs:
+Brain Studio can expose lightweight links such as:
 
-Community
-- Trending
-- Skills
-- Prompts
-- Leaderboards
-- Challenges
-- Creators
+- Community
+- Learn
+- Updates
 
-Learn
-- Lessons
-- Guides
-- AI basics
-- Brain building
-- Skill building
-- Prompting
-- Lab / Smart Match
+Those links open the NewsStand-powered ecosystem experience.
 
-Updates
-- Brain Studio updates
-- AI/model/provider updates
-- Lab findings
-- Community highlights
+NewsStand can deep-link back into Studio:
+- Add this Skill
+- Try this Prompt
+- Open this Brain lesson
+- View leaderboard
+- Test in Lab
 
-Library
-- Saved Skills
-- Saved Prompts
-- Saved Lessons
-- Saved Updates
-- History
-
-## Important architecture rule
-
-Reuse the NewsStand patterns and bounded components/data concepts, but do not tightly couple Brain Studio runtime to the existing NewsStand deployment.
-
-Brain Studio owns its own product data and permissions.
+The user should feel like one connected product family even though Studio remains operationally focused.
 
 ## Community item evolution
 
-NewsStand article concept maps naturally to Brain Studio content:
+NewsStand article concept maps naturally to Brain Studio ecosystem content:
 
 Article -> Update / Guide / Community Post
-Save Article -> Save Skill / Prompt / Lesson / Update
-Reading History -> Activity / Use History
+Save Article -> Save Update / Guide / Community Post
+Reading History -> Community/learning history
 Comments -> Community Discussion
-Moderation Report -> Skill/Prompt/Comment Report
-Notification -> Creator/Leaderboard/Challenge/Update notifications
-University Lesson -> Brain Studio Lesson
-Article Learning Links -> Skill/Prompt/Update -> related Lesson
+Moderation Report -> Community/creator/content report
+Notification -> Creator/Challenge/Update notifications
+University Lesson -> Brain Studio lesson
+Article Learning Links -> Update -> related Lesson / Skill / Prompt / Lab test
 Approval Gate -> Guardian/Shield community publication gate
+
+Skills and Prompts themselves remain Studio product objects even when they are surfaced/discovered through NewsStand.
+
+## Important architecture rule
+
+Reuse NewsStand patterns and bounded components/data concepts, but do not tightly couple Brain Studio runtime to the existing NewsStand deployment.
+
+Brain Studio owns:
+- Brain data
+- Skills
+- Prompts
+- Results
+- Lessons learned from user outcomes
+- Lab evidence
+- Smart Match
+- Leaderboard calculations
+
+NewsStand owns the broader community/news/learning experience.
 
 ## Future combined intelligence loop
 
 AI Update
--> user reads it
+-> user reads it in NewsStand
 -> related lesson explains it
--> related community Skills/Prompts show how to use it
+-> related Skill/Prompt can be opened in Studio
 -> Lab tests relevant models/prompts
 -> Smart Match learns
--> Brain Studio surfaces the useful result back to members.
+-> leaderboard reflects evidence
+-> NewsStand can report the useful finding back to the community.
 
 This preserves the KleinHub principle: easy outside, strong systems underneath.
