@@ -163,3 +163,24 @@ AI Update
 -> NewsStand can report the useful finding back to the community.
 
 This preserves the KleinHub principle: easy outside, strong systems underneath.
+
+
+## KleinHub-wide publication rule
+
+NewsStand remains a KleinHub-wide publication/community product.
+
+Brain Studio is one product channel inside it, alongside broader KleinHub updates and AI news.
+
+NewsStand should be able to publish:
+- KleinHub-wide product updates
+- Brain Studio updates
+- AI model/provider changes
+- Lab findings worth sharing
+- Skills/prompting education
+- creator/community stories
+- challenge announcements and results
+- safety/privacy information
+
+Brain Studio should not publish public NewsStand items directly as an unreviewed side effect. A Studio event/finding becomes a NewsStand update candidate, then moves through the existing editorial/approval/governance path before publication.
+
+This keeps NewsStand authoritative for publishing while Studio remains authoritative for Brains, Skills, Prompts, Results, Lab, Smart Match, and Leaderboards.
