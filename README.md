@@ -51,3 +51,39 @@ About · Goals · Audience · Rules · Preferences · Tools & Context · Skills 
 A non-technical user should be able to create a Brain, add a prebuilt Skill, generate a useful prompt, copy it, paste a result back, mark whether it worked, and see the Brain/Lessons improve — without understanding prompts, agents, context windows, APIs, or orchestration.
 
 This repository is the first real product build used to evaluate the KleinHub Pi worker system.
+
+
+## Community + Leaderboards
+
+Brain Studio is not only a private Brain. Users can optionally publish Skills and Prompts to the community.
+
+Community items should show evidence, not just likes:
+
+- uses
+- Worked / Partly / Failed outcomes
+- unique-user count
+- Lab confidence
+- strongest task categories
+- strongest model matches
+- version history
+
+Leaderboards are evidence-weighted and sample-size-aware. A prompt with 5/5 successes must not automatically outrank one with 7,200/8,000 successful uses.
+
+Initial weekly boards:
+
+- Best Prompt This Week
+- Best Skill This Week
+- Fastest Rising
+- Best New Creator
+- Best Free-AI Skill
+- Best Coding Skill
+- Best Business Skill
+- Community Favorite
+
+Community results may feed the Lab only through anonymized, policy-safe evidence. Imported community Skills never gain authority to rewrite confirmed Brain rules.
+
+Future community rewards may include featured placement, badges, free Member/Pro time, Lab credits, provider credits, sponsored challenges, prizes, or creator revenue sharing.
+
+The flywheel is:
+
+Community Skill/Prompt -> real usage -> Worked/Partly/Failed -> Lab evidence -> better Smart Match -> better creator feedback -> better Skills/Prompts.
