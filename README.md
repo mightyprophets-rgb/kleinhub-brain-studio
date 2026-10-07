@@ -108,3 +108,13 @@ Future community rewards may include featured placement, badges, free Member/Pro
 The flywheel is:
 
 Community Skill/Prompt -> real usage -> Worked/Partly/Failed -> Lab evidence -> better Smart Match -> better creator feedback -> better Skills/Prompts.
+
+## Provider + Model Intelligence
+
+Brain Studio is the Owner-facing control surface for connected AI providers and model catalogs. It keeps provider claims, free/included/paid state, pricing/quota observations, KleinHub Lab proof, and current runtime availability visibly separate.
+
+The ongoing architecture is documented in:
+
+- [Provider + Model Intelligence](docs/provider-model-intelligence.md)
+
+Core rule: provider/model catalogs are refreshed from current sources and verified again at execution time. Provider claims never replace KleinHub Lab proof, and no paid fallback is enabled silently.
