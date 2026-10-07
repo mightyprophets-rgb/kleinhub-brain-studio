@@ -87,6 +87,34 @@ Current execution truth remains separate:
 
 A model can exist in Brain Studio but still be unavailable to a specific Pi session.
 
+## Hosting and durability lock
+
+Brain Studio must not depend on Lovable credits, Lovable runtime availability, or Lovable-managed secret persistence for core provider connectivity.
+
+The target deployment is KleinHub-owned/self-hosted infrastructure, using the existing VPS/container direction (or equivalent owned deployment) so provider connectivity continues even when Lovable is unavailable, out of credits, unpublished, or blocking requests.
+
+Core requirements:
+
+- Provider keys/tokens are stored in a durable KleinHub-owned secret store or broker, not Lovable project secrets.
+- Provider/model catalog refresh runs from KleinHub-owned backend workers/services.
+- Lead / Worker / Nexus / Atlas provider metadata is persisted in KleinHub-owned storage.
+- Background provider validation/discovery must continue independently of the browser being open.
+- The browser is only the Owner control surface; closing it does not stop provider monitoring or erase connection state.
+- A Lovable outage, credit limit, or build/runtime restriction must not remove provider credentials or disable the AI control plane.
+- Secret replacement/revocation is explicit and durable; reconnecting a browser session must not require re-entering keys that are still valid.
+- Export/migration of provider connection metadata and secret references must be possible so Brain Studio is not locked to a hosting vendor.
+
+Desired ownership:
+
+    Brain Studio browser UI
+      → KleinHub API
+      → KleinHub secret broker / vault
+      → provider adapters
+      → provider APIs
+      → KleinHub database / event stream
+
+Lovable may be used temporarily for prototyping UI, but it is not the permanent runtime, secret owner, provider broker, or source of truth.
+
 ## Browser provider connection UX
 
 Brain Studio should make provider onboarding feel like a normal browser setup flow, not a terminal or env-file task.
