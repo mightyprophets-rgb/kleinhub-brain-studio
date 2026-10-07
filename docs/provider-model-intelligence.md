@@ -168,6 +168,111 @@ Brain Studio may show Owner-controlled assignments such as:
 
 Assignment means "candidate/allowed for this pool under policy", not "proven" and not "currently routable".
 
+## AI domain split
+
+Brain Studio is the central Owner-facing AI control room, but it must preserve independent AI supply domains rather than collapsing every provider/model into one global pool.
+
+The primary domains are:
+
+### Lead AI — Arty / Cord
+
+Purpose:
+
+- Owner-facing planning and advisory work
+- Arty WHAT + HOW
+- Cord WHO + WHERE + NEXT
+- deep engineering and supervision
+
+Brain Studio should show the Lead provider/model pool, current route, next eligible fallback, economic class, quota/readiness, and Lab evidence.
+
+Lead auto-switch stays inside Lead supply. Lead failure does not silently borrow Worker Pi supply, Nexus 2.0 product/research supply, or Atlas AI.
+
+### Worker AI — Pi-governed execution
+
+Purpose:
+
+- coding
+- tools
+- edits
+- tests
+- builds
+- governed execution
+
+Worker runtime availability comes from the exact governed Pi session's post-session provider/model inventory for the selected home.
+
+Brain Studio may catalog and display Worker-capable providers/models, but a static Brain Studio or database assignment does **not** make a Worker route available. Current Worker eligibility is the intersection of:
+
+    Brain Studio policy/catalog
+      ∩ Lab capability proof
+      ∩ current quota/readiness
+      ∩ exact governed Pi post-session inventory
+
+Worker AI may auto-switch inside Pi-governed Worker supply while preserving the same worker/job/worktree/checkpoint lineage.
+
+### Nexus 2.0 AI — Product / Specialist / Research / Visual / Build
+
+Purpose:
+
+- Nexus product AI
+- specialist/product tasks
+- research
+- visual/model intelligence
+- Lab-facing provider/model supply
+- Lovable AI build intelligence where configured
+
+Nexus provider connections remain Nexus supply unless explicitly assigned to another domain. Nexus can auto-switch inside its own eligible pool without becoming Lead or Worker routing authority.
+
+### Atlas AI — Owner advisor / architecture
+
+Purpose:
+
+- Owner advisory conversation
+- architecture and system understanding
+- continuity/context assistance
+- bounded analysis of KleinHub state
+
+Atlas keeps its own AI supply policy and may auto-switch among Atlas-eligible routes. Atlas AI does not become Lead, Worker, or Nexus execution authority.
+
+### Shared provider, separate authority
+
+The same provider company or model may appear in more than one domain, but that never merges authority.
+
+Keep separate where applicable:
+
+- account / credential reference
+- quota domain
+- economic policy
+- readiness state
+- Lab evidence
+- route identity
+- failover lineage
+- Owner policy
+
+A provider/model working in one domain is not automatically usable in another.
+
+### Brain Studio dashboard intent
+
+The Owner should be able to view the system at a glance:
+
+    AI Control Room
+      ├─ Lead AI — Arty / Cord
+      ├─ Worker AI — Pi-governed
+      ├─ Nexus 2.0 AI
+      └─ Atlas AI
+
+Each domain should expose:
+
+- current provider/model
+- eligible alternatives
+- current health/readiness
+- free / included / paid / unknown
+- quota/reset/cooldown where known
+- Lab capability state
+- recent failure/failover reason
+- actual provider/model receipts
+
+Brain Studio centralizes visibility, provider/model intelligence, policy management, and Lab evidence. It does **not** centralize every runtime into one shared fallback pool.
+
 ## Lab handoff
 
 The Lab should be able to pull candidate metadata from Brain Studio rather than rediscover provider catalogs itself.
