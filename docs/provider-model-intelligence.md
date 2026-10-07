@@ -87,6 +87,61 @@ Current execution truth remains separate:
 
 A model can exist in Brain Studio but still be unavailable to a specific Pi session.
 
+## Browser provider connection UX
+
+Brain Studio should make provider onboarding feel like a normal browser setup flow, not a terminal or env-file task.
+
+Owner flow:
+
+    + Add Provider
+      → choose provider
+      → Brain Studio opens a secure modal
+      → paste API key / token
+      → optional account label
+      → Connect
+      → secret is sent directly to the secret broker/vault
+      → browser never stores or re-renders the raw secret
+      → background connection job starts
+      → dashboard shows progress/result
+
+The modal should support provider-specific fields when required, for example:
+
+- API key
+- base URL only when the provider requires a custom endpoint
+- organization / account id when required
+- optional label such as "Lead", "Nexus", "Atlas", or a provider account nickname
+
+After Connect, Brain Studio should run the boring work in the background:
+
+1. validate auth without spend where possible;
+2. discover the live provider catalog;
+3. classify FREE / INCLUDED / PAID / UNKNOWN;
+4. capture model capabilities and provider claims;
+5. identify quota/rate-limit/reset information when exposed;
+6. compare current catalog with the previous observation;
+7. present policy-allowed candidates to Lab;
+8. update the appropriate AI-domain dashboard;
+9. emit a clear success, warning, or failure notification.
+
+The Owner experience should look like:
+
+    Connect xKiro
+    [ API key __________________ ]
+    [ Connect ]
+
+    Connecting…
+    ✓ Authenticated
+    ✓ 42 models discovered
+    ✓ 18 free
+    ✓ 11 tool-capable
+    → 6 candidates ready for Lab
+
+Do not expose raw secret values after submission. The Owner may replace/revoke a credential through an explicit action, but normal dashboards show only connection state and secret reference/last-updated metadata.
+
+Browser key entry is an Owner convenience surface only. Secret custody remains behind the vault/broker boundary.
+
+Background provider onboarding must not silently assign models to Lead, Worker, Nexus, or Atlas. It may recommend or pre-filter candidates; domain/pool policy remains explicit.
+
 ## Provider onboarding
 
 When the Owner adds a provider:
